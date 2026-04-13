@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helper Daily Task Log</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Daily Task Log</h1>
+      <p>Track what was completed each day with photo proof.</p>
+    </header>
+
+    <section class="card">
+      <h2>Add completed task</h2>
+      <form id="taskForm">
+        <label>
+          Date
+          <input type="date" id="taskDate" required />
+        </label>
+        <label>
+          Task name
+          <input type="text" id="taskName" placeholder="e.g., Laundry" required maxlength="80" />
+        </label>
+        <label>
+          Notes (optional)
+          <textarea id="taskNotes" rows="3" maxlength="240" placeholder="Any details..."></textarea>
+        </label>
+        <label>
+          Photo proof (optional)
+          <input type="file" id="taskPhoto" accept="image/*" capture="environment" />
+          <small>On mobile, this can open the camera directly.</small>
+        </label>
+        <img id="photoPreview" class="preview" alt="Selected photo preview" hidden />
+        <button type="submit">Save task</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Task history</h2>
+        <button id="clearBtn" class="danger" type="button">Clear all</button>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty">No tasks logged yet.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
